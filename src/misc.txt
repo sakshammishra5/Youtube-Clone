@@ -1,0 +1,44 @@
+const commentsData = [
+    {
+        name: "saksham",
+        text: "lorem snbdbhd sdhhsd  gdsssgsdg",
+        replies: [
+            {
+                name: "saksham",
+                text: "lorem snbdbhd sdhhsd  gdsssgsdg",
+                replies: [
+                    {
+                        name: "saksham",
+                        text: "lorem snbdbhd sdhhsd  gdsssgsdg",
+                        replies: [
+                            {
+                                name: "saksham",
+                                text: "lorem snbdbhd sdhhsd  gdsssgsdg",
+                                replies: []
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        name: "saksham",
+        text: "lorem snbdbhd sdhhsd  gdsssgsdg",
+        replies: []
+    },
+    {
+        name: "saksham",
+        text: "lorem snbdbhd sdhhsd  gdsssgsdg",
+        replies: []
+    }, {
+        name: "saksham",
+        text: "lorem snbdbhd sdhhsd  gdsssgsdg",
+        replies: []
+    },
+    {
+        name: "saksham",
+        text: "lorem snbdbhd sdhhsd  gdsssgsdg",
+        replies: []
+    }
+]
