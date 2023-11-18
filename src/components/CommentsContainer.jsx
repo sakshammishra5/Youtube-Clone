@@ -3,6 +3,7 @@ import CommentList from './CommentList'
 import { Comment_List_API } from '../utils/constants'
 
 
+
 const CommentsContainer = ({ videoId }) => {
     const [allComments, setAllComments] = useState([])
     useEffect(() => {
@@ -17,7 +18,7 @@ const CommentsContainer = ({ videoId }) => {
         //  const {authorDisplayName,textDisplay}=json.items[0].snippet.topLevelComment.snippet
         //  console.log(authorDisplayName,textDisplay);
     }
-    if(allComments==undefined) return null
+    if (allComments == undefined) return null
     return (
         <div className='m-5 p-2'>
             <h1 className='text-2xl font-bold '>

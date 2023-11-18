@@ -1,10 +1,6 @@
 
 
 const SearchResultCard = ({title,channelTitle,thumbnails,description}) => {
-    // if(item.length==0) return null
-    // console.log('ITEM',item);
-    // const {thumbnails,channelTitle,title}=item.items[0].snippet
-
 
     return (
         <>

@@ -8,7 +8,7 @@ const Comment = ({ name,text,profileImage }) => {
             <img className='h-8 mr-3 rounded-full' src={profileImage!=undefined?profileImage:"https://www.iconpacks.net/icons/2/free-user-icon-3296-thumb.png"} alt="" />
             <div className='px-3'>
                 <p className='font-bold'>{name}</p>
-                <p>{text}</p>
+                <p className='max-w-lg line-clamp-3'>{text}</p>
             </div>
         </div>
     )

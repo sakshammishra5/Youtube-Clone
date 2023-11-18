@@ -2,8 +2,7 @@ import React, { useEffect } from 'react'
 import ChatMessage from './ChatMessage'
 
 const LiveChat = () => {
-
-
+  
   // useEffect(()=>{
   // const i=  setInterval(() => {
   //     console.log("API polling!");

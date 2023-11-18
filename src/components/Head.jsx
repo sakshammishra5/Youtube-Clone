@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { toggleMenu } from '../utils/appSlice'
 import { YOUTUBE_SEARCH_API } from '../utils/constants'
 import { cacheResults } from '../utils/searchSlice'
-import {  useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { addSearchQuery } from '../utils/searchResultQuerySlice'
 
 
@@ -49,34 +49,39 @@ const Head = () => {
         Navigate('/searchResults')
     }
 
-    const handleClick=()=>{
+    const handleClick = () => {
         Navigate('/')
     }
 
     return (
-        <div className='grid grid-flow-col p-5 m-2 shadow-lg'>
+        <div className=' grid grid-flow-col p-5 mb-5 shadow-lg'>
             <div className='flex col-span-1'>
                 <img onClick={() => toggleMenuHandler()} className='h-8 cursor-pointer' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0evWy6vmua96UkF8RqHQv-SoBcuu3V9fwZw&usqp=CAU" alt="menu" />
-                <img className='h-8 mx-2 cursor-pointer' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkcG2zHXGdte9JuALqDpxjcqkuF4a1dCRoJ9CgVkRB8ztGGSieVsDazRmXm4gJAvg0ZOM&usqp=CAU" alt="youtube" onClick={()=>handleClick()} />
+                <img className='h-8 mx-2 cursor-pointer' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkcG2zHXGdte9JuALqDpxjcqkuF4a1dCRoJ9CgVkRB8ztGGSieVsDazRmXm4gJAvg0ZOM&usqp=CAU" alt="youtube" onClick={() => handleClick()} />
             </div>
 
-            <div className='col-span-10 '>
-                <div className='flex justify-center relative w-80'>
-                    <input className='px-5 w-1/2 border border-gray-400 p-2 rounded-l-full' type="text"
-                        value={searchQuery}
-                        onChange={(e) => setSearchQuery(e.target.value)}
-                        onFocus={() => setShowSuggestion(true)}
-                        onBlur={() => setTimeout(() => {
-                            setShowSuggestion(false)
-                        }, 200)}
-                    />
-                    <button className='border border-gray-400 py-2 px-5 bg-gray-100 rounded-r-full' onClick={()=>handleNavigate()}>🔍</button>
-                    {showSuggestion && (suggestions.length == 0 ? null : <div className='absolute left-[254px] top-10 w-[568px]  rounded-xl mt-1 pb-4 pt-4 bg-white font-semibold z-10 border border-gray-200 shadow-lg'>
-                        <ul>
-                            {suggestions.map((s, i) =>
-                                <li key={i} className='py-1 px-3 hover:bg-gray-200 cursor-default' onClick={() => handleNavigate(s)}> 🔍 {s}</li>)}
-                        </ul>
-                    </div>)}
+            <div className='col-span-10'>
+                <div className='w-full flex justify-center'>
+                    <div className='w-full ml-48 relative mx-auto'>
+                        <input className='px-5 w-1/2 border border-gray-400 p-2 rounded-l-full' type="text"
+                            value={searchQuery}
+                            onChange={(e) => setSearchQuery(e.target.value)}
+                            onFocus={() => setShowSuggestion(true)}
+                            onBlur={() => setTimeout(() => {
+                                setShowSuggestion(false)
+                            }, 300)}
+                        />
+
+                        <button className='border border-gray-400 py-2 px-5 bg-gray-100 rounded-r-full' onClick={() => handleNavigate()}>🔍</button>
+                        {showSuggestion && (suggestions.length == 0 ? null :
+                            <div className='absolute left-0 top-10 w-1/2  rounded-xl mt-1 pb-4 pt-4 bg-white font-semibold z-10 border border-gray-200 shadow-lg'>
+                                <ul>
+                                    {suggestions.map((s, i) =>
+                                        <li key={i} className='py-1 px-3 hover:bg-gray-200 cursor-pointer' onClick={() => handleNavigate(s)}> 🔍 {s}</li>)}
+                                </ul>
+                            </div>)}
+                    </div>
+
                 </div>
             </div>
 
